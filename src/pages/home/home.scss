@@ -1,3 +1,49 @@
 page-home {
 
 }
+
+a {
+  color: #1bb3bd;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 16px;
+  font-family: "robotolight","roboto",sans-serif;
+}
+
+.main {
+  padding: -10px;
+}
+
+.main-content {
+  //
+}
+
+ion-col .col {
+  padding: 0px !important;
+}
+
+.grid {
+  padding: 0px !important;
+  // margin-left: auto;
+  // margin-right: auto;
+  // width: 100%;
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-box-orient: vertical;
+  // -webkit-box-direction: normal;
+  // -webkit-flex-direction: column;
+  // -ms-flex-direction: column;
+  // flex-direction: column;
+}
