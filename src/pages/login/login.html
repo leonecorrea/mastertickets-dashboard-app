@@ -1,40 +1,35 @@
 <ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
-    <!-- <ion-header>
-      <ion-navbar>
-      </ion-navbar>
-    </ion-header> -->
-    <div padding>
-      <ion-row>
-        <ion-col>
-          <img class="logo" src="assets/imgs/logo/logo-mailchimp.png" />
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-list inset class="no-border">
-            <ion-item>
-              <ion-label>Usuário</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Senha</ion-label>
-              <ion-input type="password"></ion-input>
-            </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <button ion-button class="login-button" (click)="login()" color="vermelho">Login</button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <div (click)="goToSignup()">
-            <span>Ou crie uma nova conta.</span>
-          </div>
-        </ion-col>
-      </ion-row>
-    </div>
-  </ion-content>
-  
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/imgs/logo/logo-mailchimp.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list inset class="no-border">
+          <ion-item>
+            <ion-label>Usuário</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Senha</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" (click)="login()" color="vermelho">Login</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div (click)="goToSignup()">
+          <span>Ou crie uma nova conta.</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

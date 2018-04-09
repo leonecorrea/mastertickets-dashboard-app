@@ -15,6 +15,44 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content style="background-color:rgba(65, 85, 94, 0.096)">
-
+<ion-content style="background-color:rgba(65, 85, 94, 0.096);">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-8 col-lg-5 col-xs-5>
+        <ion-card>
+          <ion-list no-lines>
+            <ion-list-header>
+              Protocolos em Aberto
+            </ion-list-header>
+            <ion-item *ngFor="let p of protocolos">
+              {{ p.codigo }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col col-12 col-md-8 col-lg-5 col-xs-5>
+        <ion-card>
+          <ion-list no-lines>
+            <ion-list-header>
+              Protocolos em Atendimento
+            </ion-list-header>
+            <button ion-item *ngFor="let p of protocolos">
+              {{ p.codigo }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </button>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col col-12 col-md-2 col-lg-2 col-xs-2>
+        <ion-card>
+          <ion-card-content [ngStyle]="{'height':'500px'}">
+            Aqui ficaram alguns anúncios
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
