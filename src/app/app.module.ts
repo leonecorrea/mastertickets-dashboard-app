@@ -13,6 +13,8 @@ import { ConfiguracoesPage } from '../pages/configuracoes/configuracoes';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProtocolosPage } from '../pages/protocolos/protocolos';
+import { TicketsProvider } from '../providers/tickets/tickets';
+import { LoginProvider } from '../providers/login/login';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ProtocolosPage } from '../pages/protocolos/protocolos';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TicketsProvider,
+    LoginProvider
   ]
 })
 export class AppModule {}
