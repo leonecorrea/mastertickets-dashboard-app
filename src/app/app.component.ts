@@ -11,6 +11,9 @@ import { GastosPage } from '../pages/gastos/gastos';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { ProtocolosPage } from '../pages/protocolos/protocolos';
 
+import { fbConfig } from './firebase_config/firebase_config';
+import firebase from 'firebase';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,22 +22,23 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
-  pages: Array<{title: string, component: any, icon: any}>;
+  pages: Array<{ title: string, component: any, icon: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
+    firebase.initializeApp(fbConfig);
+
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: HomePage, icon: 'home' },
-      { title: 'Protocolos', component: ProtocolosPage, icon: 'alarm'},
-      { title: 'Gastos', component: GastosPage, icon: 'analytics'},
-      { title: 'Perfil', component: PerfilPage, icon: 'person'},
-      { title: 'Login', component: LoginPage, icon: 'swap'},
-      { title: 'Registrar', component: RegistrarPage, icon: 'trophy'},
-      { title: 'Configurações', component: ConfiguracoesPage, icon: 'settings'}
+      { title: 'Protocolos', component: ProtocolosPage, icon: 'alarm' },
+      { title: 'Gastos', component: GastosPage, icon: 'analytics' },
+      { title: 'Perfil', component: PerfilPage, icon: 'person' },
+      { title: 'Login', component: LoginPage, icon: 'swap' },
+      { title: 'Registrar', component: RegistrarPage, icon: 'trophy' },
+      { title: 'Configurações', component: ConfiguracoesPage, icon: 'settings' }
     ];
-
   }
 
   initializeApp() {
