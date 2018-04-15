@@ -14,6 +14,23 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProtocolosPage } from '../pages/protocolos/protocolos';
 
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyA3okSt79NEJ6bjA9_8K958u1I90rXaJmE",
+  authDomain: "mastertickets-4df61.firebaseapp.com",
+  databaseURL: "https://mastertickets-4df61.firebaseio.com",
+  projectId: "mastertickets-4df61",
+  storageBucket: "mastertickets-4df61.appspot.com",
+  messagingSenderId: "613727395354"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +45,9 @@ import { ProtocolosPage } from '../pages/protocolos/protocolos';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
