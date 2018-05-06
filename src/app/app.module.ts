@@ -7,21 +7,19 @@ import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ProtocolosPage } from '../pages/protocolos/protocolos';
-import { TicketsProvider } from '../providers/tickets/tickets';
-import { LoginProvider } from '../providers/login/login';
 
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { fbConfig } from "./firebase_config/firebase_config";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -38,8 +36,7 @@ import { fbConfig } from "./firebase_config/firebase_config";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    LoginProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule { }

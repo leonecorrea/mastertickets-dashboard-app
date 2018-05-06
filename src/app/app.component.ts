@@ -3,18 +3,15 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { fbConfig } from './firebase_config/firebase_config';
-import firebase from 'firebase';
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'DashboardPage';
+  rootPage: any = 'LoginPage';
 
-  pages: Array<{ title: string, component: any, icon: any }>;
+  pages: Array<{title: string, component: any, icon: any}>;
 
   constructor(
     public platform: Platform,
@@ -24,16 +21,18 @@ export class MyApp {
 
     this.initializeApp();
 
-    firebase.initializeApp(fbConfig);
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: 'DashboardPage', icon: 'home' },
-      { title: 'Protocolos', component: 'ProtocolosPage', icon: 'alarm' },
-      { title: 'Gastos', component: 'GastosPage', icon: 'analytics' },
-      { title: 'Perfil', component: 'PerfilPage', icon: 'person' },
-      { title: 'Configurações', component: 'ConfiguracoesPage', icon: 'settings' }
+      { title: 'Atender Senha', component: 'AtenderSenhaPage', icon: 'bookmark' },
+      { title: 'Protocolos', component: 'ProtocolosPage', icon: 'alarm'},
+      { title: 'Gastos', component: 'GastosPage', icon: 'analytics'},
+      { title: 'Perfil', component: 'PerfilPage', icon: 'person'},
+      { title: 'Login', component: 'LoginPage', icon: 'swap'},
+      { title: 'Registrar', component: 'RegistrarPage', icon: 'trophy'},
+      { title: 'Configurações', component: 'ConfiguracoesPage', icon: 'settings'}
     ];
+
   }
 
   initializeApp() {
