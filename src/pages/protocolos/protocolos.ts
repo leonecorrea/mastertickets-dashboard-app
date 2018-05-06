@@ -17,34 +17,7 @@ export class ProtocolosPage {
   protocolos = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.protocolos.push({
-      codigo: 'AC5812',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5813',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5814',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5815',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5816',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5817',
-      title: 'Esse é o titulo '
-    });
-    this.protocolos.push({
-      codigo: 'AC5818',
-      title: 'Esse é o titulo '
-    });
+    //this.protocolos = 
   }  
 
 }

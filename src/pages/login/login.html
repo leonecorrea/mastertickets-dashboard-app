@@ -9,12 +9,17 @@
       <ion-col>
         <ion-list inset class="no-border">
           <ion-item>
+            <ion-title text-center>
+              Login
+            </ion-title>
+          </ion-item>
+          <ion-item>
             <ion-label>Usuário</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="Email" ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Senha</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="password" [(ngModel)]="Password" ></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>

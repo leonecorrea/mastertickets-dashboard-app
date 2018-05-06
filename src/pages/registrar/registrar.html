@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-content id="page-whopper" padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
   <div padding>
     <ion-row>
@@ -33,3 +34,43 @@
     </ion-row>
   </div>
 </ion-content>
+=======
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+        <div padding>
+          <ion-row>
+            <ion-col>
+              <ion-icon name="arrow-back" (click)="voltar()"></ion-icon>
+              <img class="logo" src="assets/imgs/logo/logo-mailchimp.png" />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-list inset class="no-border">
+                <ion-item>
+                  <ion-title text-center>
+                    Cadastrar Usuário
+                  </ion-title>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Usuário</ion-label>
+                  <ion-input type="text" [(ngModel)]="Email" ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Senha</ion-label>
+                  <ion-input type="password" [(ngModel)]="Password" ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Confirmar Senha</ion-label>
+                    <ion-input type="password" [(ngModel)]="ConfirmarPassword" ></ion-input>
+                  </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <button ion-button class="register-button" (click)="registrar()" color="vermelho">Cadastrar</button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-content>
+>>>>>>> e7d5069cf46faebe09699ec26052871d224fb6c4

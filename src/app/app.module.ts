@@ -16,6 +16,23 @@ import { ProtocolosPage } from '../pages/protocolos/protocolos';
 import { TicketsProvider } from '../providers/tickets/tickets';
 import { LoginProvider } from '../providers/login/login';
 
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyA3okSt79NEJ6bjA9_8K958u1I90rXaJmE",
+  authDomain: "mastertickets-4df61.firebaseapp.com",
+  databaseURL: "https://mastertickets-4df61.firebaseio.com",
+  projectId: "mastertickets-4df61",
+  storageBucket: "mastertickets-4df61.appspot.com",
+  messagingSenderId: "613727395354"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,6 +47,9 @@ import { LoginProvider } from '../providers/login/login';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

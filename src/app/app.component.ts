@@ -11,8 +11,11 @@ import { GastosPage } from '../pages/gastos/gastos';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { ProtocolosPage } from '../pages/protocolos/protocolos';
 
+<<<<<<< HEAD
 import { fbConfig } from './firebase_config/firebase_config';
 import firebase from 'firebase';
+=======
+>>>>>>> e7d5069cf46faebe09699ec26052871d224fb6c4
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +27,12 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any, icon: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen
+  ) {
+
     this.initializeApp();
 
     firebase.initializeApp(fbConfig);
