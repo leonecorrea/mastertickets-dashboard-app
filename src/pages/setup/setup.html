@@ -3,7 +3,9 @@
     <div id="page-wopper">
       <ion-row>
         <ion-col text-center>
-          <ion-title><h1>Falta um pouco sobre sua empresa</h1></ion-title>
+          <ion-title>
+            <h1>Falta um pouco sobre sua empresa</h1>
+          </ion-title>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -26,11 +28,17 @@
             </ion-select>
           </ion-item>
         </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>CEP</ion-label>
+            <ion-input [(ngModel)]="endereco.cep"></ion-input>
+          </ion-item>
+        </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <button (click)="next()" ion-button color="vermelho" [disabled]="!nome_cartorio || !num_funcionarios" full icon-right>Avançar
-            <ion-icon  name="ios-arrow-forward"></ion-icon>
+            <ion-icon name="ios-arrow-forward"></ion-icon>
           </button>
         </ion-col>
       </ion-row>
