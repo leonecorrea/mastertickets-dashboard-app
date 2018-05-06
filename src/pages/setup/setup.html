@@ -1,0 +1,39 @@
+<ion-content padding style="background-color: #f6f6f6;">
+  <ion-grid>
+    <div id="page-wopper">
+      <ion-row>
+        <ion-col text-center>
+          <ion-title><h1>Falta um pouco sobre sua empresa</h1></ion-title>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label floating>Nome da Empresa</ion-label>
+            <ion-input name="nome_cartorio" [(ngModel)]="nome_cartorio"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label floating>Número de Funcionários</ion-label>
+            <ion-select [(ngModel)]="num_funcionarios">
+              <ion-option value="1000">+1000</ion-option>
+              <ion-option value="500">250-500</ion-option>
+              <ion-option value="249">100-249</ion-option>
+              <ion-option value="99">50-99</ion-option>
+              <ion-option value="49">10-49</ion-option>
+              <ion-option value="9">1-9</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button (click)="next()" ion-button color="vermelho" [disabled]="!nome_cartorio || !num_funcionarios" full icon-right>Avançar
+            <ion-icon  name="ios-arrow-forward"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

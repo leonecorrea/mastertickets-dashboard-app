@@ -1,36 +1,30 @@
 <ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
-  <div padding>
+  <div padding col-6 id="campo-inputs">
     <ion-row>
-      <ion-col>
-        <ion-list inset class="no-border">
-          <ion-item>
-            <ion-title text-center>
-              Registrar Cartório
-            </ion-title>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Nome</ion-label>
-            <ion-input type="text" [(ngModel)]="nome"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Url</ion-label>
-            <ion-input type="text" [(ngModel)]="url"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Senha</ion-label>
-            <ion-input type="password" [(ngModel)]="senha"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Confirmar Senha</ion-label>
-            <ion-input type="password" [(ngModel)]="senha2"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
+      <ion-list class="no-border">
+        <ion-title>
+          <h1>Comece com sua conta gratuita hoje.</h1>
+        </ion-title>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="email" color="vermelho" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="senha" color="vermelho" required></ion-input>
+        </ion-item>
+      </ion-list>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <button ion-button class="register-button" (click)="registrar()" color="vermelho" [disabled]="!email || !senha || !senha2">Cadastrar</button>
-      </ion-col>
+      <ion-checkbox name="concordo" id="concordo" [(ngModel)]="concordo" color="vermelho"></ion-checkbox> Eu estou de acordo com os Termos de Uso e Politica de Privacidade.
+    </ion-row>
+    <ion-row>
+      <button ion-button class="register-button" (click)="registrar()" color="vermelho" [disabled]="!email || !senha || !concordo">
+        Inscreva-se Gratuitamente
+      </button>
+    </ion-row>
+    <ion-row>
+      <p style="margin: auto; margin-top: 20px;" (click)="goToLogin()">Já tenho uma conta</p>
     </ion-row>
   </div>
 </ion-content>
