@@ -14,19 +14,9 @@ import { LoginProvider } from '../providers/login/login';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyA3okSt79NEJ6bjA9_8K958u1I90rXaJmE",
-  authDomain: "mastertickets-4df61.firebaseapp.com",
-  databaseURL: "https://mastertickets-4df61.firebaseio.com",
-  projectId: "mastertickets-4df61",
-  storageBucket: "mastertickets-4df61.appspot.com",
-  messagingSenderId: "613727395354"
-};
-
+import { fbConfig } from "./firebase_config/firebase_config";
 
 @NgModule({
   declarations: [
@@ -36,7 +26,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(fbConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
@@ -48,9 +38,8 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TicketsProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

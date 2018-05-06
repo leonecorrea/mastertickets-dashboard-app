@@ -1,8 +1,8 @@
 export const fbConfig = {
-  apiKey: "AIzaSyC1J7V7s2S_EEVznFJbkQO5OZUKFLdl_Ak",
-  authDomain: "master-tickets.firebaseapp.com",
-  databaseURL: "https://master-tickets.firebaseio.com",
-  projectId: "master-tickets",
+  apiKey: "AIzaSyBVYgNcTwZUwxA8NnRPxY7a2T92IOLDSBk",
+  authDomain: "mastertickets-2018.firebaseapp.com",
+  databaseURL: "https://mastertickets-2018.firebaseio.com",
+  projectId: "mastertickets-2018",
   storageBucket: "",
-  messagingSenderId: "893144092557"
+  messagingSenderId: "596850746328"
 };
