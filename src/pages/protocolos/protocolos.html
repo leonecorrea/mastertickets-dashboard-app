@@ -24,8 +24,23 @@
             <ion-list-header>
               Protocolos em Aberto
             </ion-list-header>
-            <ion-item *ngFor="let p of protocolos">
-              {{ p.codigo }}
+            <ion-item *ngFor="let p of protocolosRDF | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosRGC | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosPRC | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosESC | async">
+              {{ p.ticket }}
               <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
               <button ion-button outline item-end>Visualizar</button>
             </ion-item>
@@ -38,11 +53,26 @@
             <ion-list-header>
               Protocolos em Atendimento
             </ion-list-header>
-            <button ion-item *ngFor="let p of protocolos">
-              {{ p.codigo }}
+            <ion-item *ngFor="let p of protocolosAtendimentoRDF | async">
+              {{ p.ticket }}
               <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
               <button ion-button outline item-end>Visualizar</button>
-            </button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosAtendimentoRGC | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosAtendimentoPRC | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
+            <ion-item *ngFor="let p of protocolosAtendimentoESC | async">
+              {{ p.ticket }}
+              <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
+              <button ion-button outline item-end>Visualizar</button>
+            </ion-item>
           </ion-list>
         </ion-card>
       </ion-col>
@@ -51,6 +81,8 @@
           <ion-card-content [ngStyle]="{'height':'500px'}">
             Aqui ficaram alguns anúncios
           </ion-card-content>
+          <button ion-button (click)="AtenderSenha('RDF', 'Normal')">AtenderRDF</button>
+          <button ion-button (click)="AtenderSenha('RDF', 'Preferencial')">AtenderRDF Pref</button>
         </ion-card>
       </ion-col>
     </ion-row>

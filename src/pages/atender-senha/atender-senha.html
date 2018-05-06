@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="vermelho">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Atender Senha</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:rgba(65, 85, 94, 0.096);">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-12 col-lg-12 col-xs-12>
+        <ion-card *ngIf="CaixaLivre">
+          <ion-card-content [ngStyle]="{'height':'500px'}">
+            Tipo de Senha a ser Atendida
+            <ion-item col-md-6 col-sm-6 col-lg-6 col-6 col-xs-6>
+              <ion-label>Tipo Senha</ion-label>
+              <ion-select [(ngModel)]="tipoSenha">
+                <ion-option value="RDF">Reconhecimento de Firma</ion-option>
+                <ion-option value="ESC">Escritura</ion-option>
+                <ion-option value="RGC">Registro Civil</ion-option>
+                <ion-option value="PRC">Procuração</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item col-md-6 col-sm-6 col-lg-6 col-6 col-xs-6>
+              <ion-label>Preferencial</ion-label>
+              <ion-checkbox [(ngModel)]="Preferencial"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <button ion-button (click)="AtenderSenha()">Iniciar Atendimento</button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+         <ion-card *ngIf="EmAtendimento">
+          <ion-card-header>
+              Ticket
+              <h1 class = 'title' >{{AtendimentoAtual.ticket}} </h1> 
+              Prioridade
+              {{ AtendimentoAtual.typeTicket }}
+            </ion-card-header>
+            <button ion-button (click)="FinalizarAtendimento()">Finalizar Atendimento</button>
+        <ion-card-content>         
+          <h3 class = 'status'></h3>
+        </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

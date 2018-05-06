@@ -10,6 +10,7 @@ import { RegistrarPage } from '../pages/registrar/registrar';
 import { GastosPage } from '../pages/gastos/gastos';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { ProtocolosPage } from '../pages/protocolos/protocolos';
+import { AtenderSenhaPage } from '../pages/atender-senha/atender-senha';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: HomePage, icon: 'home' },
+      { title: 'Atender Senha', component: AtenderSenhaPage, icon: 'bookmark' },
       { title: 'Protocolos', component: ProtocolosPage, icon: 'alarm'},
       { title: 'Gastos', component: GastosPage, icon: 'analytics'},
       { title: 'Perfil', component: PerfilPage, icon: 'person'},
