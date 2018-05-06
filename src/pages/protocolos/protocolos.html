@@ -18,13 +18,12 @@
 <ion-content style="background-color:rgba(65, 85, 94, 0.096);">
   <ion-grid>
     <ion-row>
-      <ion-col col-12 col-md-10 col-lg-10 col-xs-10>
+      <ion-col col-12 col-md-8 col-lg-5 col-xs-5>
         <ion-card>
           <ion-list no-lines>
             <ion-list-header class="title" text-center>
               Tickets
             </ion-list-header>
-<<<<<<< HEAD
             <ion-item *ngFor="let p of protocolosRDF | async">
               {{ p.ticket }}
               <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
@@ -43,16 +42,11 @@
             <ion-item *ngFor="let p of protocolosESC | async">
               {{ p.ticket }}
               <!-- <ion-icon name="arrow-forward" color="vermelho" item-end></ion-icon> -->
-=======
-            <ion-item *ngFor="let p of protocolos">
-              #{{ p.codigo }}
->>>>>>> 4f23cb6f98497df17a8873ca0dc02ce69e9f0ed9
               <button ion-button outline item-end>Visualizar</button>
             </ion-item>
           </ion-list>
         </ion-card>
       </ion-col>
-<<<<<<< HEAD
       <ion-col col-12 col-md-8 col-lg-5 col-xs-5>
         <ion-card>
           <ion-list no-lines>
@@ -82,8 +76,6 @@
           </ion-list>
         </ion-card>
       </ion-col>
-=======
->>>>>>> 4f23cb6f98497df17a8873ca0dc02ce69e9f0ed9
       <ion-col col-12 col-md-2 col-lg-2 col-xs-2>
         <ion-card>
           <ion-card-content [ngStyle]="{'height':'500px'}">

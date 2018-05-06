@@ -37,5 +37,37 @@ export class ProtocolosPage {
       
   }  
 
+  ngOnInit(){
+    
+    this.protocolosRDF = this.db.list("/reconhecimentoFirma", ref => ref.orderByChild('status').equalTo('Aberto')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+
+    this.protocolosESC = this.db.list("/escritura", ref => ref.orderByChild('status').equalTo('Aberto')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+
+    this.protocolosRGC = this.db.list("/registroCivil", ref => ref.orderByChild('status').equalTo('Aberto')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+
+    this.protocolosPRC = this.db.list("/procuracao", ref => ref.orderByChild('status').equalTo('Aberto')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+
+    this.protocolosAtendimentoRDF = this.db.list("/reconhecimentoFirma", ref => ref.orderByChild('status').equalTo('Em Atendimento')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+    this.protocolosAtendimentoESC = this.db.list("/escritura", ref => ref.orderByChild('status').equalTo('Em Atendimento')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+    this.protocolosAtendimentoRGC = this.db.list("/registroCivil", ref => ref.orderByChild('status').equalTo('Em Atendimento')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+    this.protocolosAtendimentoPRC = this.db.list("/procuracao", ref => ref.orderByChild('status').equalTo('Em Atendimento')).snapshotChanges().map(arr => {
+      return arr.map(snap => Object.assign(snap.payload.val(), { key: snap.key }) )
+    });
+  }
+
 
 }
