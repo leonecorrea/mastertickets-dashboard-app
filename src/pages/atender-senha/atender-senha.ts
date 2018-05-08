@@ -154,7 +154,7 @@ export class AtenderSenhaPage {
     }
 
     idSenhaAtendida = this.AtendimentoAtual.id;
-    this.AtendimentoAtual.status = "Finalizado";
+    this.AtendimentoAtual.status = "Concluído";
 
     this.db.object(caminhoDB + idSenhaAtendida).update(this.AtendimentoAtual);
     alert("Atendimento ticket " + this.AtendimentoAtual.ticket + " Finalizado!");
