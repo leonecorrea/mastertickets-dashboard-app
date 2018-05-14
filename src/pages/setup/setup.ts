@@ -1,7 +1,7 @@
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -16,8 +16,8 @@ export class SetupPage {
   endereco = { cep: '', numero: '', logradouro: '', complemento: '', bairro: '', cidade: '', estado: '', pais: '' };
 
   constructor(
-    public navCtrl: NavController, public navParams: NavParams,
-    private afDatabase: AngularFireDatabase, private afAuth: AngularFireAuth
+    public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController,
+    private afDatabase: AngularFireDatabase, private afAuth: AngularFireAuth, private loadingCtrl: LoadingController
   ) {
     if (this.navParams.get('accountParams')) {
       this.accountParams = this.navParams.get('accountParams');
@@ -30,7 +30,8 @@ export class SetupPage {
     let cartorio = {
       nome: this.nome_cartorio,
       num_funcionarios: this.num_funcionarios,
-      protocolos: []
+      email: this.accountParams.email,
+      cep: this.endereco
     }
 
     this.afAuth.auth.currentUser.updateProfile({
@@ -38,9 +39,17 @@ export class SetupPage {
       photoURL: ''
     });
 
-    this.afDatabase.list(`contas/`).set(this.accountParams.uid, cartorio)
+    this.afDatabase.list(`cartorios/`).set(this.accountParams.uid, cartorio)
       .then(() => {
-        this.afDatabase.list(`cartorios/`).set(this.accountParams.uid, cartorio);
+        let loading = this.loadingCtrl.create();
+        setTimeout(() => {
+          loading.present();
+        }, 3000);
+        loading.dismiss();
+        this.navCtrl.setRoot('DashboardPage');
+      })
+      .catch((err) => {
+        this.toastCtrl.create({ message: err, position: 'button', duration: 5000 }).present();
       });
   }
 
