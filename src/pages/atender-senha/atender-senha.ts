@@ -108,6 +108,7 @@ export class AtenderSenhaPage {
           senhaAtendida = itemFiltrado[0];
           idSenhaAtendida = itemFiltrado[0].key;
           senhaAtendida.status = "Em Atendimento";
+          console.log(this.db.object(caminhoDB + idSenhaAtendida));
           this.db.object(caminhoDB + idSenhaAtendida).update(senhaAtendida);
           this.CaixaLivre = false;
           this.EmAtendimento = true;
@@ -153,8 +154,8 @@ export class AtenderSenhaPage {
         break;
     }
 
-    idSenhaAtendida = this.AtendimentoAtual.id;
-    this.AtendimentoAtual.status = "Finalizado";
+    idSenhaAtendida = this.AtendimentoAtual.key;
+    this.AtendimentoAtual.status = "Concluído";
 
     this.db.object(caminhoDB + idSenhaAtendida).update(this.AtendimentoAtual);
     alert("Atendimento ticket " + this.AtendimentoAtual.ticket + " Finalizado!");
